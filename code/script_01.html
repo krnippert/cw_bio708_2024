@@ -11,7 +11,7 @@
 
 <meta name="author" content="kalea" />
 
-<meta name="date" content="2024-08-20" />
+<meta name="date" content="2024-08-22" />
 
 <title>script_01.R</title>
 
@@ -352,13 +352,171 @@ display: none;
 
 <h1 class="title toc-ignore">script_01.R</h1>
 <h4 class="author">kalea</h4>
-<h4 class="date">2024-08-20</h4>
+<h4 class="date">2024-08-22</h4>
 
 </div>
 
 
+<pre class="r"><code>## test codes
+
+## produce 100 random numbers that follows a normal distribution
+x &lt;- rnorm(100, mean = 0, sd = 1)
+
+## estimate mean
+mean(x)</code></pre>
+<pre><code>## [1] 0.138301</code></pre>
+<pre class="r"><code>## estimate SD
+sd(x)</code></pre>
+<pre><code>## [1] 0.8857019</code></pre>
 <pre class="r"><code>c(1,2)</code></pre>
 <pre><code>## [1] 1 2</code></pre>
+<pre class="r"><code># exercise ----------------------------------------------------------------
+
+## vector
+
+x &lt;- c(1, 3, 4, 8)
+x</code></pre>
+<pre><code>## [1] 1 3 4 8</code></pre>
+<pre class="r"><code>## ex. 1.a characters
+x &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+x</code></pre>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<pre class="r"><code>## ex. 1c logical
+x &lt;- c(&quot;TRUE&quot;, &quot;FALSE&quot;, &quot;FALSE&quot;)
+x</code></pre>
+<pre><code>## [1] &quot;TRUE&quot;  &quot;FALSE&quot; &quot;FALSE&quot;</code></pre>
+<pre class="r"><code>## ex. 2 sequence of numbers
+x &lt;- 1:5
+x</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<pre class="r"><code>## ex 3a replicate same number of characters
+x &lt;- rep(2,5)
+x</code></pre>
+<pre><code>## [1] 2 2 2 2 2</code></pre>
+<pre class="r"><code>## ex 3b replicate same numbers or characters
+x &lt;- rep(&quot;a&quot;, 5)
+x</code></pre>
+<pre><code>## [1] &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot;</code></pre>
+<pre class="r"><code>## ex 4b use seq() function
+x &lt;- seq(1,5, by =0.1)
+x</code></pre>
+<pre><code>##  [1] 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8
+## [20] 2.9 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.0 4.1 4.2 4.3 4.4 4.5 4.6 4.7
+## [39] 4.8 4.9 5.0</code></pre>
+<pre class="r"><code>## ex 4c use seq() function
+x &lt;- seq(1, 5, length = 7)
+x</code></pre>
+<pre><code>## [1] 1.000000 1.666667 2.333333 3.000000 3.666667 4.333333 5.000000</code></pre>
+<pre class="r"><code>##check features
+#numeric
+x &lt;- c(1.2, 3.1, 4.0, 8.2)
+x</code></pre>
+<pre><code>## [1] 1.2 3.1 4.0 8.2</code></pre>
+<pre class="r"><code>class(x)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>typeof(x)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre class="r"><code>length(x)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>sum(x)</code></pre>
+<pre><code>## [1] 16.5</code></pre>
+<pre class="r"><code>mean(x) #gives arithmetic mean </code></pre>
+<pre><code>## [1] 4.125</code></pre>
+<pre class="r"><code>#character vector 
+y &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+class(y)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>length(y)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>##element ID
+x &lt;- c(2,2,3,2,5)
+
+#element 2
+x[2]</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>#element 2 and 4
+x[c(2,4)]</code></pre>
+<pre><code>## [1] 2 2</code></pre>
+<pre class="r"><code>#element 2 through 4
+x[2:4]</code></pre>
+<pre><code>## [1] 2 3 2</code></pre>
+<pre class="r"><code>## Matrix
+# ex 1 cbind
+x &lt;- cbind(c(1,2,3), c(4,5,6))
+x</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6</code></pre>
+<pre class="r"><code>#ex 2 rbind
+x &lt;- rbind(c(1,2,3), c(4,5,6))
+x</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<pre class="r"><code>#ex 3 matrix: specify elements and the number of rows (nrow) and columns (ncol)
+x &lt;- matrix(1:9, nrow = 3, ncol = 3)
+x &lt;- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+x</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<pre class="r"><code>dim(x)</code></pre>
+<pre><code>## [1] 3 3</code></pre>
+<pre class="r"><code>rowSums(x)</code></pre>
+<pre><code>## [1]  6 15 24</code></pre>
+<pre class="r"><code>colSums(x)</code></pre>
+<pre><code>## [1] 12 15 18</code></pre>
+<pre class="r"><code>#access 
+x &lt;- matrix(1:9, nrow = 3, ncol = 3)
+x</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<pre class="r"><code>x[2,3] # access and element in row #2 and column #3</code></pre>
+<pre><code>## [1] 8</code></pre>
+<pre class="r"><code>x[2,] #access elements in row #2</code></pre>
+<pre><code>## [1] 2 5 8</code></pre>
+<pre class="r"><code>x[c(2,3), ] #access elements in rows #2 and 3</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    2    5    8
+## [2,]    3    6    9</code></pre>
+<pre class="r"><code>x[, c(2,3)] #access elements in columns #2 and 3</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    4    7
+## [2,]    5    8
+## [3,]    6    9</code></pre>
+<pre class="r"><code>## Data frames
+# Create data frame
+x &lt;- c(&quot;Pristine&quot;, &quot;Pristine&quot;, &quot;Disturbed&quot;, &quot;Disturbed&quot;, &quot;Pristine&quot;) # Lake type
+y &lt;- c(1.2, 2.2, 10.9, 50.0, 3.0) # TSS: total suspended solids (mg/L)
+df0 &lt;- data.frame(LakeType = x, TSS = y) # x is named as &quot;LakeType&quot; while y is named as &quot;TSS&quot;
+df0</code></pre>
+<pre><code>##    LakeType  TSS
+## 1  Pristine  1.2
+## 2  Pristine  2.2
+## 3 Disturbed 10.9
+## 4 Disturbed 50.0
+## 5  Pristine  3.0</code></pre>
+<pre class="r"><code>#call column names
+colnames(df0)</code></pre>
+<pre><code>## [1] &quot;LakeType&quot; &quot;TSS&quot;</code></pre>
+<pre class="r"><code>#Access by columns 
+df0$LakeType</code></pre>
+<pre><code>## [1] &quot;Pristine&quot;  &quot;Pristine&quot;  &quot;Disturbed&quot; &quot;Disturbed&quot; &quot;Pristine&quot;</code></pre>
+<pre class="r"><code>df0$TSS</code></pre>
+<pre><code>## [1]  1.2  2.2 10.9 50.0  3.0</code></pre>
+<pre class="r"><code>df0[,1]</code></pre>
+<pre><code>## [1] &quot;Pristine&quot;  &quot;Pristine&quot;  &quot;Disturbed&quot; &quot;Disturbed&quot; &quot;Pristine&quot;</code></pre>
+<pre class="r"><code>df0[1,]</code></pre>
+<pre><code>##   LakeType TSS
+## 1 Pristine 1.2</code></pre>
+<pre class="r"><code>df0[c(2,4),]</code></pre>
+<pre><code>##    LakeType  TSS
+## 2  Pristine  2.2
+## 4 Disturbed 50.0</code></pre>
 
 
 
