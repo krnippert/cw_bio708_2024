@@ -1,3 +1,4 @@
+
 ## test codes
 
 ## produce 100 random numbers that follows a normal distribution
