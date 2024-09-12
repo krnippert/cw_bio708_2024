@@ -92,10 +92,10 @@ m <- w * 1000
 head(m)
 
 ## calculate sd and MAD for w and m
-sd_w <-  sum((w - mean(w))^2 / length(w))
+sd_w <-  sqrt(sum((w - mean(w))^2 / length(w)))
 print(sd_w)
 
-sd_m <- sum((m - mean(m))^2 / length(m))
+sd_m <- sqrt(sum((m - mean(m))^2 / length(m)))
 print(sd_m)
 
 mad_w <- median(abs(w-median(w)))
