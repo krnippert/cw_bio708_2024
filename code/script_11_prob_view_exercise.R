@@ -27,7 +27,7 @@ bin <- seq(x_min, x_max, by = 0.2)
 
 p <- NULL
 for (i in 1:(length(bin) -1)) {
-  p[i] <- pnorm(bin[i+1], mean = mu, sd = sigma) - pnorm(bin[i], mean = mu)
+  p[i] <- pnorm(bin[i+1], mean = mu, sd = sigma) - pnorm(bin[i], mean = mu, sd = sigma)
 }
 
 df_prob <- tibble(p, bin = bin[-length(bin)] + 0.5) %>% 
